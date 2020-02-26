@@ -1,7 +1,7 @@
 module Guilia
 
 using Reexport
-@reexport using TableWidgets
+using TableWidgets
 @reexport using Interact
 @reexport using Blink
 @reexport using ProcessPhotometry
@@ -48,6 +48,7 @@ include(joinpath("New_Analysis","Scatter_MeanSD.jl"))
 include(joinpath("New_Analysis","Summing.jl"))
 include(joinpath("New_Analysis","Delta_Mean.jl"))
 include(joinpath("New_Analysis","Normalised_Dist.jl"))
+include(joinpath("New_Analysis","Survival.jl"))
 include(joinpath("Photometry","sliding_mean.jl"))
 include(joinpath("Photometry","regression.jl"))
 include(joinpath("Photometry","traces.jl"))

@@ -17,7 +17,8 @@ const Analysis_list = ["",
     "Count",
     "Sum",
     "Delta_means",
-    "NormalizedDensity"]
+    "NormalizedDensity",
+    "Survival"]
 
 const Analysis_functions = OrderedDict(
     "" => nothing,
@@ -31,7 +32,8 @@ const Analysis_functions = OrderedDict(
     "Count" => Guilia.count,
     "Sum" => Guilia.summing,
     "Delta_means" => Guilia.Delta_means,
-    "NormalizedDensity" => Guilia.NormalizedDensity)
+    "NormalizedDensity" => Guilia.NormalizedDensity,
+    "Survival" => Guilia.Survival)
 
 is_small(col::AbstractArray) = false
 is_small(col::AbstractArray{<:Union{Missing, Bool, AbstractString}}) = true
