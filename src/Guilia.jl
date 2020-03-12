@@ -4,6 +4,7 @@ using Reexport
 using TableWidgets
 @reexport using Interact
 @reexport using Blink
+@reexport using IndexedTables
 @reexport using ProcessPhotometry
 @reexport using JuliaDBMeta
 @reexport using DataFrames
@@ -13,7 +14,6 @@ using TableWidgets
 @reexport using Recombinase
 @reexport using StatsPlots
 @reexport using StructArrays
-@reexport using IndexedTables
 @reexport using WeakRefStrings
 @reexport using FillArrays
 using Distributions
