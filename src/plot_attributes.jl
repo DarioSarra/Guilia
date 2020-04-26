@@ -1,7 +1,7 @@
 function plot_attributes_w()
     wdg = Widget{:Plot_attributes}(output = Observable{Any}(("tick_orientation = :out,
     legend = :topleft,
-    size = (809,500),
+    size = (650,650),
     fontfamily = \"bookman\"")))
     wdg[:Texts] = text_attributes()
     wdg[:Measures] = two_values_attributes()
@@ -89,8 +89,8 @@ function two_values_attribute(nome::String, first_val, second_val; default = ":a
 end
 
 function two_values_attributes()
-    wdg = Widget{:Measures_attributes}(output = Observable{Any}(("size = (809,500)")))
-    wdg[:Fig_size] = Guilia.two_values_attribute("size",809,500;default = (809,500))
+    wdg = Widget{:Measures_attributes}(output = Observable{Any}(("size = (650,650)")))
+    wdg[:Fig_size] = Guilia.two_values_attribute("size",650,650;default = (650,650))
     wdg[:Xlims] = Guilia.two_values_attribute("xlims",0.0,20.0)
     wdg[:Ylims] = Guilia.two_values_attribute("ylims",0.0,20.0)
     measure_output = Interact.@map join((&wdg[:Fig_size], &wdg[:Xlims], &wdg[:Ylims]),",")
@@ -131,7 +131,7 @@ function optional_attributes()
     wdg[:Grid] = Guilia.optional_attribute("grid",[:all,:none,:x,:y])
     wdg[:Legend] = Guilia.optional_attribute("legend",[:topleft,:topright,:bottomleft,:bottomright,:none, :best, :right, :left, :top, :bottom])
     wdg[:Font] = Guilia.optional_attribute("fontfamily",["bookman","avantgarde","courier","helvetica","newcenturyschlbk","palatino","times"])
-    wdg[:Background] = Guilia.optional_attribute("background_color",[:transparent,:white,:black,:grey,:red,:blue])
+    wdg[:Background] = Guilia.optional_attribute("background_color",[:white,:transparent,:black,:grey,:red,:blue])
     wdg[:Foreground] = Guilia.optional_attribute("foreground_color",[:black,:white,:grey,:red,:blue,:transparent])
     optional_output = Interact.@map join((&wdg[:Tick_dir], &wdg[:Grid],&wdg[:Legend],&wdg[:Font],&wdg[:Background],&wdg[:Foreground]),",")
     connect!(optional_output,wdg.output)
